@@ -4,6 +4,6 @@ using namespace std;
 int main()
 {
     int a;
-    scanf("");
-    printf("");
+    cin >> a;
+    cout << a << endl;
 }
