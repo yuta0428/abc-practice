@@ -21,46 +21,33 @@ using namespace std;
  */
 
 int main() {
-    // int N, M;
-    // cin >> N >> M;
-    // bool con[N][N]; // 人間関係を隣接行列で表現
-    // for (int i = 0; i < M; i++) {
-    //     int x, y;
-    //     cin >> x >> y;
-    //     con[x - 1][y - 1] = true;
-    //     con[y - 1][x - 1] = true; // 逆組み合わせもやっておく
-    // }
+    int N, M;
+    cin >> N >> M;
+    bool con[N][N]; // 人間関係を隣接行列で表現+
+    for (int i = 0; i < M; i++) {
+        int x, y;
+        cin >> x >> y;
+        con[x - 1][y - 1] = true;
+        con[y - 1][x - 1] = true; // 逆組み合わせもやっておく
+    }
 
-    // int ans = 0;
-    // // 全通りの派閥の組み合わせをビット全探索で調べる
-    // for (int i = 1<<N; i >=0; i--) {
-    //     bitset<32> groups(i);     // 派閥
-    //     int len = groups.count(); // 1になっているビットの数=派閥の人数
-    //     if (len <= ans) continue; // すでに答えより小さければ無視
-        
-    // }
+    int ans = 0;
+    // 全通りの派閥の組み合わせをビット全探索で調べる
+    for (int i = 1; i <= (1<<N); i++) {
+        bitset<16> groups(i);     // 派閥
+        int len = groups.count(); // 1になっているビットの数=派閥の人数
 
-    // // 全議員数分の組み合わせパターンを調べる。大きい組み合わせパターンから調べる。2^12=2048から
-    // for (int i = 1<<N; i >=0; i--) {
-    //     // 組み合わせパターンはbitを使用
-    //     int len = bitset<32>(i).count();  // 1になっているビットの数=派閥の人数
-    //     if (len <= ans) continue; // すでに答えより小さければ無視
-
-    //     // この派閥を作ることができるか
-    //     bool is_create = false;
-    //     for (int j=0;j<N;j++) {
-    //         for (int k=0;k<N;k++) {
-    //             if (con[j][k] == true){ // この派閥は
-    //                 is_create = true;
-    //             }
-    //         }
-    //     }
-    //     if (is_create) ans = len; // 作れるので更新！
-    // }
-
-    // for (int i=0; i<12; i++){
-    //     for (int j=i; j<12; j++){
-    //         cout << "(" << i << "," << j << ")" << endl;
-    //     }
-    // }
+        bool ok = true;
+        // 2人組の全パターンを挙げて派閥内の人同士が互いに知り合いか=完全グラフが成り立つかを確認する
+        for(int j=0; j<N; j++){
+            for (int k=0; k=j; k++){
+                if (groups.test(j) && groups.test(k) // j,kさんは派閥に属しているか
+                && !con[j][k]) // j,kさんは知り合い同士でないか
+                {
+                    ok = false; // 派閥内の人同士が互いに知り合いでないといけないためどの組かでも知り合いじゃない組がいたら無効
+                }
+            }
+        }
+        if(ok)ans=len;
+    }
 }

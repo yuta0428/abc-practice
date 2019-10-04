@@ -75,6 +75,7 @@
         "typeinfo": "cpp",
         "variant": "cpp"
     },
+    "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
         "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.out && oj t -c $dir$fileNameWithoutExt.out",
     },
