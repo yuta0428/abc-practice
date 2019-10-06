@@ -77,7 +77,8 @@
     },
     "code-runner.runInTerminal": true,
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.out && oj t -c $dir$fileNameWithoutExt.out",
+        // fish only
+        "cpp": "cd (wslpath $dirWithoutTrailingSlash) && g++ $fileName -o $fileNameWithoutExt.out && oj t -c ./$fileNameWithoutExt.out",
     },
     "C_Cpp.loggingLevel": "Information",
 }
