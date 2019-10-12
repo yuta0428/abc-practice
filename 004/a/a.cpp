@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    int a;
-    cin >> a;
-    cout << a << endl;
+    int N;
+    cin >> N;
+    cout << 2*N << endl;
 }
