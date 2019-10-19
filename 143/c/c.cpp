@@ -19,3 +19,7 @@ int main()
     }
     cout << ans << endl;
 }
+
+/*
+unique使っても解けるかもね
+*/
