@@ -6,7 +6,7 @@ int main()
     int n; // コンテスト番号 001
     cin >> n;
 
-    string dir_abcd = n < 126 ? "abcd" : "abcd";
+    string dir_abcd = n < 126 ? "abcd" : "abcdef";
     for (int i = 0; i < dir_abcd.length(); i++)
     {
         const char dir = dir_abcd[i];
