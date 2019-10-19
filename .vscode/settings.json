@@ -82,4 +82,10 @@
         "cpp": "cd (wslpath $dirWithoutTrailingSlash) && g++ $fileName -o $fileNameWithoutExt.out && oj t -c ./$fileNameWithoutExt.out",
     },
     "C_Cpp.loggingLevel": "Information",
+    "C_Cpp.clang_format_style": "file",
+    "[cpp]":{
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+    }
 }
