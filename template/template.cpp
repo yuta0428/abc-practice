@@ -6,9 +6,9 @@ using namespace std;
 #define check(x) cout << #x "=" << x << endl;
 #define checkpair(x, y) cout << #x "=" << x << ", " #y "=" << y << endl;
 
+const int INF = 1001001001;
+
 int main()
 {
-    int a;
-    cin >> a;
-    cout << a << endl;
+    return 0;
 }
