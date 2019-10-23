@@ -10,5 +10,18 @@ const int INF = 1001001001;
 
 int main()
 {
+    int N;
+    cin >> N;
+    string ans = "NO";
+    if (N % 3 == 0) ans = "YES";
+
+    for (char s : to_string(N)){
+        if (s == '3') {
+            ans = "YES";
+            break;
+        }
+    }
+    cout << ans << endl;
+
     return 0;
 }
