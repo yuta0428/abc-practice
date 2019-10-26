@@ -10,24 +10,13 @@ const int INF = 1001001001;
 
 int main()
 {
-    int N;
-    cin >> N;
-    int c[N];
-    repeat(i, N) cin >> c[i];
-    int cnt = 0;
-    int ci = 0;
-    repeat(i,N){
-        int cc = c[ci];
-        if (i + 1 >= cc) {
-            ci++;
-            continue;
-        }
-        cnt++;
-    }
-    cout << cnt << endl;
+
     return 0;
 }
 
 /*
-雑にやってみたが当然だめだった
+最長増加部分列(Longest Increasing Subsequence)というアルゴリズムで解けるらしい
+参考:http://hidollara.hatenablog.com/entry/2017/07/22/211904
+
+解説の解説: https://blog.kotet.jp/2017/08/abc-006-d/
 */
