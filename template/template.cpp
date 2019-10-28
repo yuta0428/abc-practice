@@ -7,6 +7,7 @@ using namespace std;
 #define checkpair(x, y) cout << #x "=" << x << ", " #y "=" << y << endl;
 
 const int INF = 1001001001;
+#define lli long long int
 
 int main()
 {
