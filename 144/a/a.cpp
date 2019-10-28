@@ -10,5 +10,8 @@ const int INF = 1001001001;
 
 int main()
 {
+    int a,b;
+    cin >> a >> b;
+    cout << (a < 10 && b < 10 ? a * b : -1) << endl;
     return 0;
 }
