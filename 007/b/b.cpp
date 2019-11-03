@@ -11,5 +11,11 @@ const int INF = 1001001001;
 
 int main()
 {
+    string a;
+    cin >> a;
+    if (a != "a") cout << 'a' << endl;
+    else
+        cout << -1 << endl;
+
     return 0;
 }
